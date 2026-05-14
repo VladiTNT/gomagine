@@ -1,0 +1,8 @@
+Gomagine is an image editing tool that runs directly
+in your command line.
+
+Syntax:
+> gomagine -src="..." -dst="..." -opts="options..."
+
+Options:
+- "gs" -> Grayscale
