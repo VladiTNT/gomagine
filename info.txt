@@ -6,3 +6,6 @@ Syntax:
 
 Options:
 - "gs" -> Grayscale
+- "br(n)" -> Changes the image's brightness by the factor n
+- "con(n)" -> Changes the image's contrast by the factor n
+- "r90" -> Rotates the image by 90 degrees

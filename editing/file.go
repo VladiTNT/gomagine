@@ -9,6 +9,7 @@ import (
 	"os"
 )
 
+// LoadImage loads the image located at path as an RGBA64 image.
 func LoadImage(path string) (*image.RGBA64, string, error) {
 	f, err := os.Open(path)
 	if err != nil {
@@ -34,6 +35,7 @@ func LoadImage(path string) (*image.RGBA64, string, error) {
 	return imgRGBA64, imgFmt, nil
 }
 
+// WriteImage decodes the RGBA64 image with the given format and writes it to 'path'.
 func WriteImage(path, imgFmt string, img *image.RGBA64) error {
 	var buf bytes.Buffer
 
