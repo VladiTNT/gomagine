@@ -2,26 +2,26 @@ package editing
 
 import "image"
 
-func Rotate90(img *image.RGBA64) {
+func FlipHorizontal(img *image.RGBA64) {
 	temp := cloneImage(img)
 	w := img.Bounds().Dx()
 	h := img.Bounds().Dy()
 
 	for x := range w {
 		for y := range h {
-			img.SetRGBA64(x, y, temp.RGBA64At(y, w-x))
+			img.SetRGBA64(x, y, temp.RGBA64At(w-x, y))
 		}
 	}
 }
 
-func Rotate180(img *image.RGBA64) {
+func FlipVertical(img *image.RGBA64) {
 	temp := cloneImage(img)
 	w := img.Bounds().Dx()
 	h := img.Bounds().Dy()
 
 	for x := range w {
 		for y := range h {
-			img.SetRGBA64(x, y, temp.RGBA64At(w-x, h-y))
+			img.SetRGBA64(x, y, temp.RGBA64At(x, h-y))
 		}
 	}
 }

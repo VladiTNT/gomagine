@@ -6,34 +6,34 @@ import (
 	"github.com/VladiTNT/gomagine/editing"
 )
 
-// go test -run TestRotate90 ./editing -v
-func TestRotate90(t *testing.T) {
+// go test -run TestFlipHorizontal ./editing -v
+func TestFlipHorizontal(t *testing.T) {
 	img, _, err := editing.LoadImage("../assets/PFP.png")
 	if err != nil {
 		t.Logf("Error loading image: %v\n", err)
 		t.FailNow()
 	}
 
-	editing.Rotate90(img)
+	editing.FlipHorizontal(img)
 
-	err = editing.WriteImage("../assets/tests/rotate90.png", "png", img)
+	err = editing.WriteImage("../assets/tests/flipHorizontal.png", "png", img)
 	if err != nil {
 		t.Logf("Error writing image: %v\n", err)
 		t.Fail()
 	}
 }
 
-// go test -run TestRotate180 ./editing -v
-func TestRotate180(t *testing.T) {
+// go test -run TestFlipVertical ./editing -v
+func TestFlipVertical(t *testing.T) {
 	img, _, err := editing.LoadImage("../assets/PFP.png")
 	if err != nil {
 		t.Logf("Error loading image: %v\n", err)
 		t.FailNow()
 	}
 
-	editing.Rotate180(img)
+	editing.FlipVertical(img)
 
-	err = editing.WriteImage("../assets/tests/rotate180.png", "png", img)
+	err = editing.WriteImage("../assets/tests/flipVertical.png", "png", img)
 	if err != nil {
 		t.Logf("Error writing image: %v\n", err)
 		t.Fail()
