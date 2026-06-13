@@ -9,3 +9,8 @@ Options:
 - "br(n)" -> Changes the image's brightness by the factor n
 - "con(n)" -> Changes the image's contrast by the factor n
 - "r90" -> Rotates the image by 90 degrees
+- "r180" -> Rotates the image by 180 degrees
+- "fliph" -> Flips the image horizontally
+- "flipv" -> Flips the image vertically
+- "blendl(r, g, b, T)" -> Blends the image with the color given by the RGB values with the multiplier factor T
+- "draw("path", x, y)" -> Draws the image located at the given path at the position defined by x and y

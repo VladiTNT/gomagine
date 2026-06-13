@@ -2,6 +2,7 @@ package editing
 
 import (
 	"image"
+	"image/color"
 	"slices"
 )
 
@@ -23,4 +24,17 @@ func clamp(val, min, max float64) float64 {
 	}
 
 	return val
+}
+
+func rawRGBA(col color.Color) (float64, float64, float64, float64) {
+	r, g, b, a := col.RGBA()
+	fr, fg, fb, fa := float64(r), float64(g), float64(b), float64(a)
+
+	if fa > 0 {
+		fr = (fr * 65535) / fa
+		fg = (fg * 65535) / fa
+		fb = (fb * 65535) / fa
+	}
+
+	return fr, fg, fb, fa
 }

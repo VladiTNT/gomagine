@@ -79,3 +79,9 @@ func Contrast(factor float64) PixelTransformFunc {
 		}
 	}
 }
+
+func BlendLinear(col color.Color, factor float64) PixelTransformFunc {
+	return func(c color.Color) color.Color {
+		return LinearInterpolationBlending(c, col, factor)
+	}
+}
